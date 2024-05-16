@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/cloudy.png" />
+  </head>
+  <body class="bg-dark">
+    <div
+      id="loading"
+      class="position-fixed top-0 start-0 end-0 bottom-0 bg-black"
+    >
+      <i class="fa-solid fa-spinner fa-spin fa-3x"></i>
+    </div>
+    <nav class="container navbar navbar-expand-lg bg-dark my-4">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand text-white d-flex justify-content-between align-items-center"
+          href="#"
+          ><i class="fa-solid fa-cloud text-primary fa-2xl p-3"></i
+          ><span
+            >Weather<br /><span class="text-secondary fs-6"
+              >tagline goes here</span
+            ></span
+          ></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li
+              class="nav-item me-5 border border-5 border-primary rounded-5 px-4"
+            >
+              <a
+                class="nav-link active text-primary"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link text-white" href="#">News</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link text-white" href="#">Live cameras</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link text-white" href="#">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="pt-5">
+      <div class="container input-group mb-3 position-relative">
+        <input
+          type="text"
+          class="form-control bg-dark rounded-5 py-3 w-100 border-dark text-white px-5"
+          placeholder="Find Your Location..."
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+          id="search"
+        />
+        <button
+          class="btn btn-outline-secondary bg-primary text-white rounded-5 px-4 position-absolute end-0 bottom-0 top-0 h-75 mt-2 me-3"
+          type="button"
+          id="btn-search"
+        >
+          Find
+        </button>
+      </div>
+    </header>
+    <section class="bg-dark position-relative">
+      <div class="d-flex flex-row weathers">
+        <div class="card bg-dark mb-3 bg-opacity-75">
+          <div
+            class="card-header text-white d-flex flex-row justify-content-between"
+          >
+            <span id="dayname" class="text-secondary"></span
+            ><span
+              ><span id="daymonth" class="text-secondary"></span
+              ><span id="monthname" class="text-secondary"></span
+            ></span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-white" id="city"></h5>
+            <p
+              class="card-text text-white temps d-flex flex-column justify-content-between align-items-center p-3"
+            >
+              <img class="d-block w-25" alt="" id="weatherIcon" />
+              <span><span id="tempdeg"></span>°C</span>
+            </p>
+            <p
+              class="text-secondary fs-5 fw-bolder fst-italic"
+              id="tempdegm1"
+            ></p>
+            <p class="card-text text-primary" id="daycond"></p>
+          </div>
+        </div>
+        <div class="card bg-dark mb-3  bg-opacity-75">
+          <div
+            class="card-header text-white d-flex flex-row justify-content-between"
+          >
+            <span id="dayname1" class="text-secondary"></span
+            ><span
+              ><span id="daymonth1" class="text-secondary"></span
+              ><span id="monthname1" class="text-secondary"></span
+            ></span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-white" id="city1"></h5>
+            <div
+              class="card-text text-white temps d-flex flex-column justify-content-between align-items-center p-3"
+            >
+              <img class="d-block w-25" alt="" id="weatherIcon1" />
+              <span><span id="tempdeg1"></span>°C</span>
+            </div>
+            <p
+              class="text-secondary fs-5 fw-bolder fst-italic "
+              id="tempdegm"
+            ></p>
+            <p class="card-text text-primary" id="daycond1"></p>
+          </div>
+        </div>
+        <div class="card bg-dark mb-3 bg-opacity-75">
+          <div
+            class="card-header text-white d-flex flex-row justify-content-between"
+          >
+            <span id="dayname2" class="text-secondary"></span
+            ><span
+              ><span id="daymonth2" class="text-secondary"></span
+              ><span id="monthname2" class="text-secondary"></span
+            ></span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-white" id="city2"></h5>
+            <p
+              class="card-text text-white temps d-flex flex-column justify-content-between align-items-center p-3"
+            >
+            <img class="d-block w-25" alt="" id="weatherIcon2" />
+              <span><span id="tempdeg2"></span>°C</span>
+              
+            </p>
+            <p
+              class="text-secondary fs-5 fw-bolder fst-italic"
+              id="tempdegm2"
+            ></p>
+            <p class="card-text text-primary" id="daycond2"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="py-5 mt-5 bg-black">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="input-group mb-3 w-50">
+          <input
+            type="text"
+            class="form-control bg-dark rounded-5 py-3 w-100 border-dark text-white px-5"
+            placeholder="Enter Your Email to Subscribe..."
+            aria-label="Recipient's username"
+            aria-describedby="button-addon1"
+          />
+          <button
+            class="btn btn-outline-secondary bg-primary text-white rounded-5 px-4 position-absolute end-0 bottom-0 top-0 h-75 mt-2 me-2"
+            type="button"
+            id="button-addon2"
+          >
+            Subscribe
+          </button>
+        </div>
+        <div>
+          <i class="fa-brands fa-facebook fa-2x me-3"></i
+          ><i class="fa-brands fa-twitter fa-2x me-3"></i
+          ><i class="fa-brands fa-google-plus fa-2x me-3"></i
+          ><i class="fa-brands fa-pinterest fa-2x"></i>
+        </div>
+      </div>
+      <p class="text-secondary mt-5 container fs-6">
+        Copyright 2014 Company name. Designed by Themezy. All rights reserved
+      </p>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
